@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="lightbox.css">
+  
+  
+  <title>Frontend Mentor | E-commerce product page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+      <nav class="relative container mx-auto py-6 px-6 border-b-2">
+        
+        <div class="flex items-center justify-between">
+
+          <div class="flex space-x-4 md:space-x-12 ">
+
+            <div>
+              <button id="open"><img src="./images/icon-menu.svg" alt="" class="md:hidden"></button>
+              
+            </div>
+
+            <div><img src="./images/logo.svg" alt=""></div>
+            <div class="hidden space-x-4 md:flex">
+              <a href="#" class=" text-DarkGrayishBlue font-bold hover:text-VeryVarkBlue">Collection</a>
+              <a href="#" class=" text-DarkGrayishBlue font-bold hover:text-VeryVarkBlue">Men</a>
+              <a href="#" class=" text-DarkGrayishBlue font-bold hover:text-VeryVarkBlue">Women</a>
+              <a href="#" class=" text-DarkGrayishBlue font-bold hover:text-VeryVarkBlue">About</a>
+              <a href="#" class=" text-DarkGrayishBlue font-bold hover:text-VeryVarkBlue">Contact</a>
+            </div>
+          </div>
+
+          <div class="flex space-x-8 items-center">
+            <img src="./images/icon-cart.svg" class="cart-icon h-5 cursor-pointer hover:h-4" alt="">
+            <img src="./images/image-avatar.png" class="h-10 cursor-pointer hover:border-2 hover:border-Orange rounded-full"  alt="">
+          </div>
+        </div>
+
+        <!-- Mobile Menu -->
+
+        <div class="md:hidden">
+          <div id="menu" class="absolute flex flex-col pl-10 items-start self-end top-0 py-8  space-y-6 font-bold -left-96 bg-white drop-shadow-2xl sm:w-auto sm:self-start" >
+            <button id="close"><img src="./images/icon-close.svg" alt="" class="mb-10 mt-4"></button>
+            
+              <a href="#" class="hover:text-darkgrayishblue">Collections</a>
+              <a href="#" class="hover:text-darkgrayishblue">Men</a>
+              <a href="#" class="hover:text-darkgrayishblue">Women</a>
+              <a href="#" class="hover:text-darkgrayishblue">About</a>
+              <a href="#" class="hover:text-darkgrayishblue">Contact</a>
+          </div>
+      </div>
+      </nav>
+
+
+      <div class="cart hidden relative">
+        <div class="h-44 w-72 absolute right-14 md:right-40 drop-shadow-2xl bg-white rounded-md overflow-y-scroll overflow-x-hidden">
+          <h5 class="font-bold border-b p-3">Cart</h5>
+          <!-- <small class="flex items-center justify-center translate-y-10 text-DarkGrayishBlue font-bold" id="text" height="100%">Your cart is empty.</small> -->
+          <div class="cart-fill flex flex-col items-center justify-center space-y-6 my-4">
+            <div class="cart-items flex flex-col space-y-4">
+             
+            </div>
+           <div class="flex justify-end items-center my-4 mr-2">
+              <span>Total = </span>
+            <small class="cart-total text-black font-bold">$0</small>
+          </div>
+            <a href="#" class="check flex items-center justify-center text-sm cursor-pointer bg-Orange py-2 px-20 text-white rounded-lg hover:bg-PaleOrange">Checkout</a>
+          </div>
+          
+        </div>
+      </div>
+
+      <section id="main">
+        <div class="flex flex-col justify-between items-center space-y-16 container mx-auto py-10 space-x-0 px-6 md:flex-row md:space-y-0 md:space-x-24 ">
+          <div class="flex flex-col space-y-4 md:w-1/2">
+            <div class="w-50%">
+              <img src="./images/image-product-1.jpg" class="main-img rounded-xl" width="100%" alt="">
+              
+            </div>
+            <div class="small-images flex justify-between space-x-4">
+           
+                <a href="./images/image-product-1.jpg"  data-lightbox="sneakers"><div class="small-group"><img src="./images/image-product-1.jpg" class="small-img border cursor-pointer hover:bg-PaleOrange rounded-xl"  onclick="toggleClass(this)"  alt=""></div></a>
+             
+                <a href="./images/image-product-2.jpg"  data-lightbox="sneakers"><div class="small-group"><img src="./images/image-product-2.jpg" class="small-img cursor-pointer rounded-xl"  onclick="toggleClass(this)" alt=""></div></a>
+
+                <a href="./images/image-product-3.jpg"  data-lightbox="sneakers"><div class="small-group"><img src="./images/image-product-3.jpg" class="small-img cursor-pointer rounded-xl"  onclick="toggleClass(this)" alt=""></div></a>
+
+                <a href="./images/image-product-4.jpg"  data-lightbox="sneakers"><div class="small-group"><img src="./images/image-product-4.jpg" class="small-img cursor-pointer rounded-xl"  onclick="toggleClass(this)" alt=""></div></a>
+            </div>
+          </div>
+
+          <div class="flex flex-col md:1/2">
+            <h6 class="text-Orange font-bold ">SNEAKER COMPANY</h6>
+            <h3 class="cart-title text-4xl font-bold py-4">Fall Limited Edition Sneakers</h3>
+            <p class="text-1xl text-GrayishBlue max-w-lg">These low-profile sneakers are your perfect casual wear companion. Featuring a 
+              durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+              <div class="flex flex-row justify-between py-4 items-start md:flex-col">
+                <div class="flex space-x-4">
+                <h5 class="cart-pricee text-2xl font-bold">$125.00</h5>
+                <h6 class="bg-PaleOrange p-1 text-Orange inline  rounded font-bold">50%</h6>       
+                </div>
+                <div>
+                  <span class="text-GrayishBlue line-through">$250.00</span>
+              </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row space-x-0 space-y-6 md:space-x-16">
+              <div class="cart-change flex items-center justify-between space-x-8 space-y-0 rounded-lg bg-LightGrayishBlue py-1 px-4 md:h-9 md:mt-6">
+                <img src="./images/icon-minus.svg" alt="" class="minus w-2 cursor-pointer">
+                <p class="num">1</p>
+                <img src="./images/icon-plus.svg" alt="" class="plus h-2 cursor-pointer">
+              </div>
+      
+              <div>
+              <a href="#" class="add-cart flex  items-center justify-center  text-sm cursor-pointer bg-Orange py-2 px-10 text-white rounded-lg hover:bg-PaleOrange md:w-max"><img src="./images/icon-cart.svg" alt="" class="h-3 mr-3">Add to Cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">JMariam</a>.
+  </div>
+
+  <script src="main.js" async></script>
+  <script src="lightbox-plus-jquery.js"></script>
+</body>
+</html>
